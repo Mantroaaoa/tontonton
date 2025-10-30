@@ -134,7 +134,7 @@ function displaySavedProfiles() {
         nama.classList = 'nama';
 
         if (profile.ageGroup === "Dewasa") {
-            newImg.src = 'img/profile.png';
+            newImg.src = 'img/Profile.png';
             ahref.href = 'HalamanAwal/index.html';
         } else {
             newImg.src = 'img/babyPP.png';
@@ -180,12 +180,6 @@ function displaySavedProfiles() {
 }
 
 // Panggil fungsi ini SETELAH DOM siap (di dalam event listener DOMContentLoaded)
-window.addEventListener('DOMContentLoaded', () => {
-    // ... (kode Anda yang lain untuk nav scroll) ...
-
-    // Tampilkan profil yang tersimpan
-    displaySavedProfiles();
-});
 
 
 
@@ -229,97 +223,108 @@ function menuPP() {
     // Fungsi internal untuk menangani penambahan profil
     // Di dalam function menuPP() { ... }
 
+    // Di dalam function menuPP()
+
     function addBtn() {
+        // --- Validasi Input ---
         const pesanErrorLama = newDiv.querySelector('.pesan-error');
         if (pesanErrorLama) {
             pesanErrorLama.remove();
         }
-
         const namaValue = newInput.value;
         const umurValue = newInput2.value;
 
+        if (namaValue.trim() === '') {
+            const pesanError = document.createElement('p');
+            pesanError.textContent = 'Nama Tidak Boleh Kosong';
+            pesanError.classList.add('pesan-error'); // Pastikan ada style CSS untuk .pesan-error
+            // Tempatkan pesan error setelah input nama
+            newInput.insertAdjacentElement('afterend', pesanError);
+            console.log("Validasi gagal: Nama kosong.");
+            return; // Penting: Hentikan fungsi jika nama kosong
+        }
+        console.log("Validasi berhasil.");
 
+        // --- HAPUS FORM SEKARANG ---
+        console.log("Mencoba menghapus newDiv (form):", newDiv);
+        newDiv.remove(); // Hapus form SEBELUM membuat card baru
 
-        if (namaValue.trim() === '') { /* ... */ return; }
-
-        newDiv.remove(); // Hapus form
-
+        // --- Buat Profil Baru & Simpan ---
         const newProfile = { name: namaValue, ageGroup: umurValue };
-
-        // Tambahkan ke array & simpan
         userProfiles.push(newProfile);
         saveProfilesToStorage();
+        console.log("Profil baru disimpan:", newProfile);
 
-        // Tampilkan card profil baru
+        // --- Tampilkan Card Profil Baru ---
         const profilContainer = document.createElement("div");
-        profilContainer.classList.add('profilCard'); // Style wadah
+        profilContainer.classList.add('profilCard');
 
         const nama = document.createElement("p");
+        nama.textContent = newProfile.name;
+        nama.classList = 'nama'; // Class nama Anda (pastikan ini ada di CSS)
+
         const ahref = document.createElement("a");
         const newImg = document.createElement("img");
+        newImg.classList.add('profilIcon'); // Class ikon Anda
 
-        nama.textContent = newProfile.name;
-        nama.classList = 'nama';
+        if (newProfile.ageGroup === "Dewasa") {
+            newImg.src = 'img/Profile.png'; // Pastikan path benar
+            ahref.href = 'HalamanAwal/index.html'; // Pastikan path benar
+        } else {
+            newImg.src = 'img/babyPP.png'; // Pastikan path benar dan nama file benar (babyPP.png?)
+            ahref.href = 'HalamanAwalA/index.html'; // Pastikan path benar
+        }
 
-        if (newProfile.ageGroup === "Dewasa") { newImg.src = 'img/Profile.png' } else { newImg.src = 'babyPP.png' }
+        nama.classList.add('profilNama'); // Class nama profil Anda
 
-        newImg.classList.add('profilIcon');
-        nama.classList.add('profilNama');
-
-        // --- MULAI TAMBAHAN TOMBOL HAPUS ---
+        // Buat Tombol Hapus untuk card baru
         const deleteProfileBtn = document.createElement('button');
         deleteProfileBtn.classList.add('delete-profile-btn');
         deleteProfileBtn.innerHTML = '&times;';
-        // Dapatkan index dari profil yang BARU saja ditambahkan
         const newIndex = userProfiles.length - 1;
         deleteProfileBtn.dataset.index = newIndex;
 
         deleteProfileBtn.addEventListener('click', (event) => {
             event.stopPropagation();
             const indexToDelete = parseInt(event.target.dataset.index);
-
             if (indexToDelete >= 0 && indexToDelete < userProfiles.length) {
                 userProfiles.splice(indexToDelete, 1);
                 saveProfilesToStorage();
                 profilContainer.remove();
-                 console.log('Profil dihapus. Sisa:', userProfiles);
-                 // Re-render untuk update index (opsional)
-                 displaySavedProfiles();
+                console.log('Profil dihapus. Sisa:', userProfiles);
+                displaySavedProfiles(); // Re-render untuk update index
             } else {
-                 console.error("Index profil tidak valid:", indexToDelete);
+                console.error("Index profil tidak valid saat hapus:", indexToDelete);
             }
         });
-        // --- AKHIR TAMBAHAN TOMBOL HAPUS ---
 
+        // Susun Card Baru
         ahref.append(newImg);
-        profilContainer.append(ahref, nama); // Tambahkan tombol hapus
+        // Pastikan urutan append benar: tombol hapus, link gambar, lalu nama
+        profilContainer.append(deleteProfileBtn, ahref, nama);
 
-        // Tambahkan ke DOM
+        // Tambahkan Card Baru ke DOM (.daftar)
         const daftarElement = document.querySelector(".daftar");
-        daftarElement.append(profilContainer);
-        daftarContain.append(daftarElement)
-    }
-    // ...
+        if (daftarElement) {
+            daftarElement.append(profilContainer);
+            console.log("Card profil baru ditambahkan ke .daftar");
+        } else {
+            console.error("Elemen .daftar tidak ditemukan saat menambahkan card baru.");
+        }
 
-    // Tambahkan event listener ke tombol "Buat" di form
+        // HAPUS BARIS INI - Ini menyebabkan error/perilaku aneh
+        // daftarContain.append(daftarElement)
+
+        // HAPUS BARIS INI - newDiv sudah dihapus di atas
+        // newDiv.remove()
+    } // Akhir dari fungsi addBtn
+
+    // Pasang listener ke tombol "Buat" (tetap sama)
     newBtn.addEventListener('click', addBtn);
-}
 
+} // Akhir dari fungsi menuPP
 // 5. Panggil displaySavedProfiles saat halaman selesai dimuat
-window.addEventListener('DOMContentLoaded', () => {
-    // Tampilkan profil yang sudah tersimpan
-    displaySavedProfiles();
 
-    // Pasang event listener ke tombol "Tambah Pengguna" (jika belum)
-    const tombolTambah = document.querySelector('.addBtn'); // Asumsi class tombol tambah
-    if (tombolTambah) {
-        tombolTambah.addEventListener('click', menuPP);
-    } else {
-        console.warn("Tombol .addBtn tidak ditemukan untuk memasang event listener menuPP.");
-    }
-
-    // ... (Kode Anda yang lain untuk nav scroll, dll bisa ditaruh di sini juga) ...
-});
 
 tombolMulai.addEventListener('click', menuPP);
 
