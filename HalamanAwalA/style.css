@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+}
+a{
+  text-decoration: none;
+}
+nav {
+    flex-direction: row;
+    display: flex;
+    height: 60px;
+    width: 120%;
+    position: fixed;
+    /* transparan biar nyatu sama video */
+    color: white;
+    
+    padding-bottom: 8px;
+    z-index: 1000000;
+}
+
+header {
+    position: relative;
+}
+
+.videoprev {
+    position: absolute;
+    
+    object-fit: cover;
+    filter: brightness(70%);
+
+}
+.videoprev-content {
+      position: relative;
+      margin-left: 80px;
+      transform: translateY(-190%);
+      display: flex;
+      
+    }
+.videoprev-content button{
+    background: none;
+    border: none;
+}
+nav img {
+    margin-left: 40px;
+}
+
+.navbuttons {
+    margin-left: 50px;
+    display: flex;
+}
+.navbuttons_footer{
+    margin-left: 0px;
+    
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+.navbuttons_footer h4 {
+   margin-top: -3px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+}
+.navbuttons h4 {
+    margin-right: 50px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+}
+
+.navbuttons2 {
+    /* margin-top: 20px; */
+    margin-left: 250px;
+    display: flex;
+
+}
+
+.profile {
+    margin-top: 10px;
+    width: 50%;
+    height: 70%;
+}
+
+.other-class {
+    margin-top: 17px;
+}
+button img{
+    height: 90px;
+    width: 170px;
+    margin-left: 10px;
+}
+.scroll-foto {
+    width: 100%;
+    overflow-x: auto;        /* hanya scroll ke samping */
+    overflow-y: hidden;      /* cegah scroll ke bawah */
+    white-space: nowrap;     /* biar foto berjejer ke samping */
+    scroll-behavior: smooth; /* scroll halus */
+    padding: 1rem;
+    position: relative;
+    transform: translateY(400%);
+    scrollbar-width: none;
+    display: flex;
+    
+  }
+.scroll-foto img {
+    display: inline-block;
+    width: 250px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 10px;
+  }
+  .scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(1550%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    transition: background 0.3s;
+    z-index: 10;
+    
+  }
+  .scroll-btn:hover {
+    background-color: rgba(0,0,0,0.7);
+  }
+
+  .scroll-left {
+    left: -10px;
+  }
+
+  .scroll-right {
+    right: -10px;
+  }
+    .gallery-wrapper {
+    position: relative;
+    width: 90%;
+    margin: 0px auto;
+  }
+
+#scroll div{
+  display: flex;
+}
+footer{
+  color: white;
+  position: relative;
+  transform: translateY(500px);
+  height: 250px;
+  text-align: center;
+  width: 100%;
+  
+  /* justify-content: space-between; */
+  /* border-radius: 50px; */
+}
+footer img{
+  margin-bottom: 10px;
+}
+.footerleft{
+  text-align: left;
+  margin-left: 200px;
+  width: 50%;
+}
+.footerright{
+  margin-left: 700px;
+  text-align: right;
+  width: 30%;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+.footerright p{
+  font-size: 14px;
+}
+.smfooter{
+  margin-top: 25px;
+}
+#smfoot{
+  color: white;
+  margin: 0px 10px;
+}
+.footerhr{
+    border: none;
+    border-left: 1px solid #ccc;
+    height: 200px;
+   
+}

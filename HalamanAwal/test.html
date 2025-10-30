@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scroll Foto dengan Tombol</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+  }
+
+  .wrapper {
+    position: relative;
+    width: 90%;
+    margin: 40px auto;
+  }
+
+  .scroll-area {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    scrollbar-width: none;
+  }
+
+  .scroll-area::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll-area img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex: 0 0 auto;
+  }
+
+  .scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    font-size: 24px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .scroll-btn:hover {
+    background: rgba(0,0,0,0.6);
+  }
+
+  .left {
+    left: -15px;
+  }
+
+  .right {
+    right: -15px;
+  }
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Galeri dengan Tombol Geser</h2>
+
+<div class="wrapper">
+  <button class="scroll-btn left">&lt;</button>
+  <div class="scroll-area" id="galeri">
+    <img src="https://picsum.photos/600/400?1">
+    <img src="https://picsum.photos/600/400?2">
+    <img src="https://picsum.photos/600/400?3">
+    <img src="https://picsum.photos/600/400?4">
+    <img src="https://picsum.photos/600/400?5">
+  </div>
+  <button class="scroll-btn right">&gt;</button>
+</div>
+
+<!-- Tambahkan konten di bawah -->
+<div style="text-align:center; margin:100px 0;">
+  <p>Bagian bawah halaman ini bisa discroll 🎉</p>
+  <p>Tambahkan konten kamu di sini!</p>
+</div>
+
+<script>
+  const galeri = document.getElementById('galeri');
+  const scrollStep = 320;
+
+  document.querySelector('.left').onclick = () =>
+    galeri.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+
+  document.querySelector('.right').onclick = () =>
+    galeri.scrollBy({ left: scrollStep, behavior: 'smooth' });
+</script>
+
+</body>
+</html>

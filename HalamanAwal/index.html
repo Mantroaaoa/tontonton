@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Website Tugas KOKURIKULER/css/all.css">
+    <link rel="stylesheet" href="/Website Tugas KOKURIKULER/css/animasi.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../save.js">
+    <title>Tonton-Home-Page</title>
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="shortcut icon" href="images/T (2).png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+
+        <nav class="navBar">
+    <img src="images/Home.png" alt="" height="100%" width="8%">
+
+    <div class="navbuttons" id="nav-links">
+        <a id="homeNav" href="#home">
+            <h4>Home</h4>
+        </a>
+        <a href="#movie">
+            <h4>Movies</h4>
+        </a>
+        <a id="movieNav" href="#newMovie">
+            <h4>New & Popular </h4>
+        </a>
+        <h4 style="cursor: pointer;" onclick="listMenu()">My List</h4>
+        <a href="#Aboutus">
+            <h4>About Us</h4>
+        </a>
+    </div>
+
+    <div class="navbuttons2">
+        <img id="Search" onclick="search()" style="cursor: pointer;" src="images/Search.png" alt="" height="35%"
+            width="10%" class="other-class">
+        <img id="notif" onclick="notif()" style="cursor: pointer;" src="images/Notif.png" alt="" height="35%"
+            width="10%" class="other-class">
+        <a href="/Website Tugas KOKURIKULER/index.html">
+            <img src="images/Profile.png" alt="" class="profile">
+        </a>
+    </div>
+
+    <button class="hamburger-btn" id="hamburger-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+</nav>
+        <div id="home" class="videoprev">
+            <video id="video" autoplay loop src="Videos/star wars jumbotron.mp4" height="100%" width=100%></video>
+            <div id="newMovie" class="videoprev-content">
+                <button
+                    style="margin-right: 10px; background-color: rgb(255, 12, 12); border: 1px solid black; border-radius: 20px; border-style: none; padding: 12px;">
+                    <a href="https://youtu.be/Hp6e_mPznDw?si=_yDzIRvaT3K7E7rp">
+                        <i style="margin-right: 7px;" class="fas fa-play"></i><span>Watch Movie</span>
+                    </a>
+                </button>
+                <button
+                    style="background-color: rgb(230, 230, 230); border: 1px solid black; border-radius: 20px; border-style: none; padding: 12px;"
+                    class="MoreInfo">
+                    <a href="https://id.wikipedia.org/wiki/Star_Wars">
+                        <i style="margin-right: 8px; color: black;" class="fas fa-info-circle"></i><span style="color: black;">More Info</span>
+                    </a>
+                    
+                </button>
+            </div>
+        </div>
+
+    </header>
+    <main>
+    <h1 style="color: white; margin-left: 50px; font-family: Lexend, sans-serif; margin-top: 30px;">
+        New & Popular
+    </h1>
+    <div class="gallery-wrapper">
+        <button class="scroll-btn scroll-left">&#8249;</button>
+        <div class="scroll-foto" id="scroll" style="margin-bottom: 80px; cursor: pointer;">
+            <img onclick="moC(this)" data-value="F1" src="images/F1.jpg" alt="">
+            <img onclick="moC(this)" data-value="F2" src="images/F2.jpg" alt="">
+            <img onclick="moC(this)" data-value="F3" src="images/F3.jpg" alt="">
+            <img onclick="moC(this)" data-value="F4" src="images/F4.jpg" alt="">
+            <img onclick="moC(this)" data-value="F5" src="images/F5.jpg" alt="">
+            <img onclick="moC(this)" data-value="F6" src="images/F6.jpg" alt="">
+            <img onclick="moC(this)" data-value="F7" src="images/F7.jpg" alt="">
+            <img onclick="moC(this)" data-value="F8" src="images/F8.jpg" alt="">
+        </div>
+        <button class="scroll-btn scroll-right">&#8250;</button>
+    </div>
+
+    <h1 style="color: white; margin-left: 50px; font-family: Lexend, sans-serif;">
+        Horror
+    </h1>
+    <div class="gallery-wrapper">
+        <button class="scroll-btn scroll-left">&#8249;</button>
+        <div class="scroll-foto" id="scroll" style=" cursor: pointer;">
+            <img onclick="moC(this)" data-value="F9" src="images/F9.jpg" alt="">
+            <img onclick="moC(this)" data-value="F10" src="images/F10.jpg" alt="">
+            <img onclick="moC(this)" data-value="F11" src="images/F11.jpg" alt="">
+            <img onclick="moC(this)" data-value="F12" src="images/F12.jpg" alt="">
+            <img onclick="moC(this)" data-value="F13" src="images/F13.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F14" src="images/F14.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F15" src="images/F15.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F16" src="images/F16.jpeg" alt="">
+        </div>
+        <button class="scroll-btn scroll-right">&#8250;</button>
+    </div>
+
+    <h1 style="color: white; margin-left: 50px; font-family: Lexend, sans-serif;">
+        Actions
+    </h1>
+    <div class="gallery-wrapper">
+        <button class="scroll-btn scroll-left">&#8249;</button>
+        <div class="scroll-foto" id="scroll" style=" cursor: pointer;">
+            <img onclick="moC(this)" data-value="F17" src="images/F17.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F18" src="images/F18.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F19" src="images/F19.jpg" alt="">
+            <img onclick="moC(this)" data-value="F20" src="images/F20.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F21" src="images/F21.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F22" src="images/F22.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F23" src="images/F23.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F24" src="images/F24.jpeg" alt="">
+        </div>
+        <button id="movie" class="scroll-btn scroll-right">&#8250;</button>
+    </div>
+
+    <h1 style="color: white; margin-left: 50px; font-family: Lexend, sans-serif;">
+        Marvel
+    </h1>
+    <div class="gallery-wrapper">
+        <button class="scroll-btn scroll-left">&#8249;</button>
+        <div class="scroll-foto" id="scroll" style=" cursor: pointer;">
+            <img onclick="moC(this)" data-value="F25" src="images/F25.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F26" src="images/F26.jpg" alt="">
+            <img onclick="moC(this)" data-value="F27" src="images/F27.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F28" src="images/F28.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F29" src="images/F29.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F30" src="images/F30.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F31" src="images/F31.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F32" src="images/F32.jpeg" alt="">
+        </div>
+        <button id="movie" class="scroll-btn scroll-right">&#8250;</button>
+    </div>
+
+    <h1 style="color: white; margin-left: 50px; font-family: Lexend, sans-serif;">
+        Local
+    </h1>
+    <div class="gallery-wrapper">
+        <button class="scroll-btn scroll-left">&#8249;</button>
+        <div class="scroll-foto" id="scroll" style=" cursor: pointer;">
+            <img onclick="moC(this)" data-value="F33" src="images/F33.jpg" alt="">
+            <img onclick="moC(this)" data-value="F34" src="images/F34.jpg" alt="">
+            <img onclick="moC(this)" data-value="F35" src="images/F35.jpeg" alt="">
+            <img onclick="moC(this)" data-value="F36" src="images/F36.jpg" alt="">
+            <img onclick="moC(this)" data-value="F37" src="images/F37.webp" alt="">
+            <img onclick="moC(this)" data-value="F38" src="images/F38.jpg" alt="">
+            <img onclick="moC(this)" data-value="F39" src="images/F39.webp" alt="">
+            <img onclick="moC(this)" data-value="F40" src="images/F40.jpg" alt="">
+        </div>
+        <button id="movie" class="scroll-btn scroll-right">&#8250;</button>
+    </div>
+</main>
+    <footer style="transform: translateY(0px);" id="Aboutus">
+    
+    <div class="footer-top">
+        <img src="images/Home.png" alt="Tonton Logo" class="footer-logo">
+        
+        <nav class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#movie">Movies</a>
+            <a href="#newMovie">New & Popular</a>
+            <a href="#" onclick="listMenu()">My List</a>
+            <a href="#Aboutus">About Us</a>
+        </nav>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="footer-bottom">
+        
+        <div class="footer-about">
+            <h1>About Us</h1>
+            <p>
+                Tonton adalah perpustakaan digital Anda untuk menikmati ribuan film, serial TV, dan Originals eksklusif
+                dengan kualitas 4K jernih. Kami hadir untuk memenuhi semua selera tontonan Anda, kapan saja, di
+                perangkat apa saja. Nikmati pengalaman streaming terbaik tanpa jeda iklan.
+            </p>
+        </div>
+        
+        <div class="footer-social">
+            <a href="https://www.instagram.com/tenpostfourpl_">
+                <i class="fa-brands fa-instagram" id="ig"></i>
+            </a>
+            <a href="https://www.tiktok.com/@tenpostfourpl">
+                <i class="fa-brands fa-tiktok" id="tt"></i>
+            </a>
+            <a href="https://youtu.be/xvFZjo5PgG0?si=ggDZwpiMCLziUK9G">
+                <i class="fa-brands fa-youtube" id="yt"></i>
+            </a>
+            <a href="https://github.com/Mantroaaoa/Profil">
+                <i class="fa-brands fa-github" id="gt"></i>
+            </a>
+        </div>
+        
+        <div class="footer-copyright">
+            <p>&copy; 2025 Tonton KOKURIKULER Group X Rpl 4</p>
+        </div>
+
+    </div>
+</footer>
+</body>
+<script src="/Website Tugas KOKURIKULER/script.js"></script>
+<script src="script.js"></script>
+<script src="/Website Tugas KOKURIKULER/movClick.js" defer></script>
+
+</html>

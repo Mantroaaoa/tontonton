@@ -1,0 +1,466 @@
+.movDiv{
+    position: absolute;
+    z-index: 100000;
+    background-color: rgba(0, 0, 0, 0.963);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 100%;
+    height: 148%;
+    top: 0;
+    padding-top: 90px;
+    max-width: 100%;
+    border-style: none;
+    overflow-y: auto;
+}
+body{
+    overflow-x: hidden;
+}
+.nav-scrolled{
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.movContainer{
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(249, 248, 248);
+    max-width: 100%;
+    overflow-x: hidden;
+
+}
+.vid{
+    width: 100%;
+    max-width: 100%;
+    height: 80%;
+    border-style: none;
+    object-fit: cover;
+    object-position: top;
+    overflow-x: hidden;
+}
+.xButton{
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    bottom: 90px;
+    right: 80px;
+    cursor: pointer;
+    padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    color: white;
+}
+.xButton:hover{
+    border: 1px solid black;
+    border-radius: 50%;
+    border-style: none;
+    background-color: rgb(152, 151, 151);
+    transform: scale(1.1);
+}
+.addList{
+    font-size: 25px;
+    border-radius: 20px;
+    border-style: none;
+    background-color: white;
+    transform: translateY(3px);
+    padding: 0;
+    margin: 10px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(.6, 0.3, .1, 1.5);
+    box-sizing: border-box;
+}
+.addList.listHover {
+    width: 130px;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.addList i{
+    transition: margin-right 0.4s cubic-bezier(.7, -1, .1, 1.5);
+}
+.addList .listText{
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap; 
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: max-width 0.4s cubic-bezier(.7, -1, .1, 1.5), opacity 0.4s cubic-bezier(.7, -1, .1, 1.5), margin-left 0.4s cubic-bezier(.7, -1, .1, 1.5);
+}
+.addList.listHover .listText {
+    max-width: 200px; 
+    opacity: 1;
+    margin-left: 8px; 
+}
+.watchButton{
+    border: 1px solid black;
+    border-radius: 20px;
+    border-style: none;
+    background-color: rgb(255, 0, 0);
+    padding: 10px 0;
+    margin: 10px;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    height: 40px;
+    width: 50px;
+    transition: all 0.5s cubic-bezier(.3, 0.3, .1, 1.5);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.watchButton.btnHover {
+    width: 210px;
+    justify-content: flex-start;
+    padding-left: 16px;
+}
+
+.watchButton i{
+    transition: margin-right 0.4s cubic-bezier(.7, -1, .1, 1.5);
+}
+.watchButton .watchText{
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap; 
+
+    transition: max-width 0.4s cubic-bezier(.7, -1, .1, 1.5), opacity 0.4s cubic-bezier(.7, -1, .1, 1.5), margin-left 0.4s cubic-bezier(.7, -1, .1, 1.5);
+}
+.watchButton.btnHover .watchText {
+    max-width: 200px; 
+    opacity: 1;
+
+    margin-left: 8px; 
+}
+
+a{
+    color: white;
+}
+
+.videoprev-content button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.listDiv{
+    position: absolute;
+    z-index: 100000;
+    background-color: rgba(0, 0, 0, 0.733);
+    backdrop-filter: blur(10px);
+    width: 80%;
+    max-width: 80%;
+    height: 80%;
+    top: 60px;
+    left: 10%;
+    /* padding-top:; */
+    max-width: 100%;
+    border-style: none;
+    overflow-y: auto;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+.xBtn{
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    /* bottom: 90px; */
+    right: 15px;
+    top: 6px;
+    cursor: pointer;
+    padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    color: white;
+}
+.xBtn:hover{
+    border: 1px solid black;
+    border-radius: 50%;
+    border-style: none;
+    background-color: rgb(152, 151, 151);
+    transform: scale(1.1);
+}
+.judulList{
+    color: white;
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.imgDiv{
+    display: flex;
+    flex-wrap: wrap;
+}
+.img{
+    width: 20px;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+}
+/* Wadah untuk setiap item di My List */
+.list-item-container {
+    position: relative; /* Agar tombol X bisa diposisikan absolut */
+    display: inline-block; /* Atau display: block, tergantung layout Anda */
+    margin: 5px; /* Beri sedikit jarak antar item */
+}
+
+/* Tombol Hapus (X) */
+.delete-list-btn {
+    position: absolute; /* Menempel relatif terhadap .list-item-container */
+    top: 25px; /* Jarak dari atas */
+    left: 180px; /* Jarak dari kanan */
+
+    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang semi-transparan */
+    color: white; /* Warna ikon X */
+    border: none;
+    border-radius: 50%; /* Membuatnya bulat */
+    width: 24px; /* Ukuran tombol */
+    height: 24px;
+    font-size: 16px; /* Ukuran ikon X */
+    line-height: 24px; /* Menengahkan X secara vertikal */
+    text-align: center;
+    cursor: pointer;
+    z-index: 2; /* Pastikan di atas gambar */
+
+    /* Sembunyikan secara default */
+    /* display: none; */
+
+    /* Menengahkan X jika pakai flex */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+/* (Opsional) Efek saat tombol X di-hover */
+.delete-list-btn:hover {
+    background-color: rgba(255, 0, 0, 0.8); /* Merah saat di-hover */
+}
+
+/* Pastikan gambar di dalam wadah mengisi wadah */
+.list-item-container .img {
+     display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+     width: 77%; /* Atau ukuran spesifik Anda */
+     height: auto; /* Jaga rasio aspek */
+}
+
+.psnKosong{
+    display: flex;
+    margin-left: 40%;
+    margin-top: 15%;
+}
+
+/* Target gambar di dalam My List */
+.listDiv .imgDiv .img { /* Sesuaikan selector jika perlu */
+    width: 200px; /* Atur lebar yang Anda inginkan */
+    height: auto; /* Biarkan tinggi otomatis */
+    aspect-ratio: 16 / 9; /* Paksa rasio aspek video (lebar 16, tinggi 9) */
+    object-fit: cover; /* Potong gambar agar pas tanpa distorsi */
+    display: block; /* Menghilangkan spasi ekstra */
+}
+
+/* Wadah profil card */
+.profilCard {
+    position: relative; /* Agar tombol X bisa diposisikan absolut */
+    /* ... style card Anda yang lain ... */
+    margin: 10px; /* Contoh */
+    display: inline-block; /* Contoh */
+}
+
+/* Tombol Hapus (X) untuk Profil */
+/* Gunakan selector yang lebih spesifik */
+.profilCard > .delete-profile-btn {
+    position: absolute !important; /* Pastikan ini diterapkan */
+    top: 5px;
+    right: 5px;
+    background-color: rgb(21, 0, 255) !important; /* Pastikan ini diterapkan */
+    color: white; /* Pastikan ini diterapkan */
+    width: 22px;  /* Pastikan ini diterapkan */
+    height: 22px; /* Pastikan ini diterapkan */
+    z-index: 100;
+    /* ... sisa style Anda ... */
+    opacity: 0; /* Kembalikan ke 0 jika Anda mau efek hover */
+    transition: opacity 0.2s ease;
+}
+
+/* Hover selector juga perlu dispesifikkan */
+.profilCard:hover > .delete-profile-btn {
+    opacity: 1;
+}
+.daftar {
+    display: flex; /* Mengaktifkan Flexbox */
+    justify-content: center; /* Menengahkan item secara horizontal */
+    align-items: flex-start; /* Meratakan item ke atas (jika tingginya beda) */
+    flex-wrap: wrap; /* Biarkan item pindah baris jika layar sempit */
+    gap: 20px; /* Jarak antar item (sesuaikan) */
+    padding-top: 30px; /* Beri jarak dari judul "Siapa Yang Menonton?" */
+}
+/* GAYA UNTUK <main> (JUDUL & GALERI) */
+main h1 {
+    color: white;
+    margin-left: 50px;
+    font-family: 'Lexend', sans-serif;
+    margin-top: 40px; /* Jarak antar kategori */
+    margin-bottom: -15px; /* Tarik galeri sedikit ke atas */
+}
+
+/* Beri jarak atas HANYA untuk H1 pertama (New & Popular) */
+main h1:first-of-type {
+    margin-top: 30px;
+}
+
+/* GAYA UNTUK FOOTER */
+/* GANTI rule .navbuttons Anda di all.css dengan ini */
+.navbuttons {
+    margin-left: 50px;
+    display: flex;
+    gap: 25px; /* Gunakan 'gap' untuk jarak, bukan margin di h4 */
+}
+
+.navbuttons h4 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    margin: 0; /* Hapus margin default */
+    padding: 0;
+    white-space: nowrap; /* PAKSA AGAR "New & Popular" TIDAK TURUN */
+}
+
+
+/* GANTI rule footer, footerleft, dan footerright Anda di all.css */
+/* HAPUS SEMUA CSS FOOTER LAMA DAN GANTI DENGAN INI */
+footer {
+    background-color: rgb(16, 16, 16); 
+    padding: 40px 50px; /* Padding atas/bawah 40px, kiri/kanan 50px */
+    box-shadow: inset 0 50px 500px rgba(62, 0, 0, 0.623);
+    margin-top: 50px; /* Jarak dari galeri terakhir */
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+}
+
+/* --- BARIS ATAS --- */
+.footer-top {
+    display: flex;
+    justify-content: space-between; /* Logo kiri, Nav kanan */
+    align-items: center; /* Sejajarkan vertikal */
+    width: 100%;
+    margin-bottom: 30px; /* Jarak ke garis pemisah */
+}
+
+.footer-logo {
+    height: 35px; /* Sesuaikan ukuran logo */
+    width: auto;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 30px; /* Jarak antar link navigasi */
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap; /* Jaga "New & Popular" tidak turun */
+}
+.footer-nav a:hover {
+    color: #e50914; /* Warna merah saat hover */
+}
+
+
+/* --- GARIS PEMISAH --- */
+.footer-divider {
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* --- BAGIAN BAWAH --- */
+.footer-bottom {
+    display: flex;
+    flex-direction: column; /* Tumpuk item ke bawah */
+    align-items: center; /* Tengahkan semua */
+    margin-top: 30px; /* Jarak dari garis pemisah */
+}
+
+.footer-about {
+    text-align: center;
+    max-width: 600px; /* Batasi lebar teks About Us */
+    color: white;
+}
+
+.footer-about h1 {
+    font-family: 'Lexend', sans-serif;
+    font-size: 2em;
+    margin-top: 0;
+}
+
+.footer-about p {
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-social {
+    margin-top: 25px; /* Jarak dari teks About Us */
+    display: flex;
+    gap: 20px; /* Jarak antar ikon sosial media */
+}
+
+#yt, #ig, #gt, #tt {
+    color: white;
+    font-size: 20px;
+    transition: 0.2s;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px;
+    border-style: none;
+}
+.footer-social #yt:hover {
+    /* color: #e50914; */
+    transform: scale(1.2);
+    background-color: rgb(255, 0, 0);
+}
+#tt:hover{
+    /* color: rgb(118, 71, 120); */
+    transform: scale(1.2);
+    background-color: black;
+}
+#gt:hover{
+    /* color: black; */
+    background-color: rgb(0, 0, 0);
+    transform: scale(1.2);
+}
+#ig:hover{
+    background-color: rgb(247, 0, 255);
+    transform: scale(1.2);
+    /* color: rgb(251, 0, 255); */
+}
+
+.footer-copyright {
+    margin-top: 25px;
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.profile, .Search, .notif{
+    width: 27%;
+    margin-top: 10px;
+}
+.profile:hover, #Search:hover, #notif:hover{
+    transform: scale(1.1);
+}
+.navbuttons h4:hover{
+    color: #e50914;
+}

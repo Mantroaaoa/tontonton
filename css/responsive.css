@@ -1,0 +1,263 @@
+/* =========================================== */
+/* GANTI SEMUA ISI responsive.css DENGAN INI    */
+/* UNTUK LAYAR TABLET & HP (<= 768px)         */
+/* =========================================== */
+@media screen and (max-width: 768px) {
+
+    /* --- 1. PERBAIKAN NAVBAR (HAMBURGER) --- */
+    nav.navBar {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 15px;
+        width: 100%;
+        box-sizing: border-box; 
+        background-color: rgba(0, 0, 0, 0.9); /* Paksa latar belakang */
+        position: fixed; /* Paksa agar menempel di atas */
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    nav.navBar img { /* Logo */
+        height: 30px;
+        width: auto;
+        margin: 0;
+    }
+
+    .navbuttons {
+        display: none; /* Sembunyikan default */
+        position: absolute;
+        top: 50px; /* Tinggi navbar Anda */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        z-index: 99; /* Di bawah navbar */
+    }
+
+    .navbuttons.open {
+        display: flex;
+    }
+
+    .navbuttons a, .navbuttons h4 {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .navbuttons2 {
+        margin-left: auto; /* Dorong ke kanan */
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbuttons2 img, .navbuttons2 a img {
+        height: 22px;
+        width: auto;
+        margin-right: 12px;
+        margin-top: 0;
+    }
+    .navbuttons2 a img.profile {
+         margin-right: 0;
+    }
+
+    .hamburger-btn {
+        display: block; /* Tampilkan di HP */
+        margin-left: 10px;
+        font-size: 20px;
+        z-index: 101;
+        padding: 0 5px;
+        color: white; /* Pastikan warnanya putih */
+        background: none; /* Hapus latar belakang */
+        border: none; /* Hapus border */
+        cursor: pointer;
+    }
+
+    /* --- 2. PERBAIKAN LAYOUT VIDEO & KATEGORI --- */
+    .videoprev {
+        position: relative; /* Hapus 'absolute' */
+        width: 100%;
+        height: 50vh; /* Perkecil tinggi video */
+        /* Hapus 'transform' dari style desktop */
+    }
+    .videoprev video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Tombol di video */
+    .videoprev-content {
+        position: absolute;
+        bottom: 20px;
+        left: 50%; /* Tengahkan */
+        transform: translateX(-50%); /* Tengahkan */
+        margin-left: 0;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .videoprev-content button {
+        padding: 8px 12px !important; /* Paksa padding lebih kecil */
+        font-size: 13px !important;
+        border-radius: 5px !important; /* Kurangi radius */
+        height: auto;
+        transform: none !important; /* Hapus transform dari style desktop */
+    }
+     .videoprev-content button span {
+        font-size: 13px !important;
+     }
+
+    /* Judul Kategori (H1) */
+    main h1 {
+        transform: none !important; /* Hapus positioning aneh */
+        margin-left: 15px !important;
+        margin-top: 30px !important; /* Jarak atas */
+        margin-bottom: -10px !important; /* Tarik galeri ke atas */
+        font-size: 1.2em !important;
+        color: white;
+        font-family: 'Lexend', sans-serif;
+    }
+
+    /* Galeri Film */
+    .gallery-wrapper {
+        padding-top: 20px !important; /* Hapus padding besar */
+        transform: none !important; /* Hapus transform aneh */
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .scroll-foto {
+        transform: none !important; /* Hapus transform aneh */
+        padding: 0 15px;
+        margin-top: 0;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+    .scroll-foto img {
+        width: 150px;
+        height: 85px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+    .scroll-btn {
+        display: none; /* Sembunyikan panah di HP */
+    }
+
+    /* --- 3. PERBAIKAN FOOTER BERANTAKAN --- */
+    /* Di dalam @media screen and (max-width: 768px) { ... } */
+
+/* HAPUS SEMUA CSS FOOTER LAMA DI HP DAN GANTI DENGAN INI */
+footer {
+    padding: 30px 20px; /* Kurangi padding di HP */
+}
+
+.footer-top {
+    flex-direction: column; /* Tumpuk logo dan nav */
+    gap: 20px; /* Jarak antara logo dan nav */
+    margin-bottom: 20px;
+}
+
+.footer-nav {
+    flex-wrap: wrap; /* Biarkan link pindah baris jika tidak muat */
+    justify-content: center; /* Tengahkan link */
+    gap: 15px 25px; /* Jarak atas/bawah & kiri/kanan */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-about {
+    width: 100%; /* Lebar penuh di HP */
+}
+
+.footer-about h1 {
+    font-size: 1.5em; /* Perkecil H1 */
+}
+
+.footer-about p {
+    font-size: 13px; /* Perkecil teks paragraf */
+}
+
+    /* --- 4. PERBAIKAN MODAL moC & listMenu --- */
+    /* (Kode ini dari pesan Anda sebelumnya, sudah benar) */
+    .movDiv {
+        width: 100%;
+        height: 100vh;
+        max-width: 100%;
+        padding-top: 40px;
+        box-sizing: border-box;
+        left: 0;
+        top: 0;
+        border-radius: 0;
+        overflow-x: hidden; /* Sembunyikan scroll horizontal */
+    }
+    .vid { /* Iframe Video */
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+    .xButton {
+        top: 10px;
+        right: 15px;
+        bottom: auto;
+        font-size: 1.5em;
+        padding: 5px 10px;
+        z-index: 1001;
+    }
+    .watchButton, .addList {
+        padding: 8px 0;
+        height: 35px;
+        width: 45px;
+    }
+    .watchButton.btnHover { width: 180px; padding-left: 12px; }
+    .addList.listHover { width: 110px; padding-left: 10px; }
+    .watchButton .watchText, .addList .listText { font-size: 13px; }
+
+    .listDiv {
+        width: 95%;
+        height: 90vh;
+        left: 2.5%;
+        top: 5vh;
+        border-radius: 15px;
+    }
+    .xBtn {
+        top: 10px;
+        right: 10px;
+    }
+    .judulList {
+        font-size: 1.5em;
+        margin: 15px;
+    }
+    .listDiv .imgDiv .img {
+        /* width: 100px; */
+        /* aspect-ratio:  / 3; */
+        object-fit: cover;
+    }
+    .delete-list-btn {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+        line-height: 20px;
+        top: 5px;
+        right: 5px;
+        left: auto; /* Hapus 'left' */
+    }
+    .imgDiv{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #Search, #notif{
+        width: 20px;
+        height: 20px;
+        margin-right: 15px;
+    }
+    .psnKosong{
+        margin-left: 8%;
+    }
+
+}

@@ -1,0 +1,23 @@
+*{
+    transition:  0.5s cubic-bezier(.7,-1,.1,1.5);
+}
+
+.videoprev-content img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+#scroll img:hover{
+    /* transition: 0.5s ease; */
+    transform: translateY(-5px) scale(1.1);
+    /* width: 400px; */
+    filter: brightness(1);
+}
+
+
+
+
+@media screen and (min-width:1000px) and (max-height:1024px) {
+    .newDiv{
+        width: 30%;
+    }
+}
