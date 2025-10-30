@@ -261,7 +261,7 @@ function menuPP() {
         nama.textContent = newProfile.name;
         nama.classList = 'nama';
 
-        if (newProfile.ageGroup === "Dewasa") { /* ... */ } else { /* ... */ }
+        if (newProfile.ageGroup === "Dewasa") { newImg.src = 'img/Profile.png' } else { newImg.src = 'babyPP.png' }
 
         newImg.classList.add('profilIcon');
         nama.classList.add('profilNama');
